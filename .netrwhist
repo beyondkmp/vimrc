@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/beyond/.emacs.d/auto-save-list'
 let g:netrw_dirhist_2='/Users/beyond/.emacs.d/personal/preload'
 let g:netrw_dirhist_3='/Users/beyond/.emacs.d/savefile'
@@ -7,3 +7,5 @@ let g:netrw_dirhist_4='/Users/beyond/Documents/笔记/Guide.localized'
 let g:netrw_dirhist_5='/Users/beyond/Downloads/keka-contextmenu-1.2/english/Compress with Keka.workflow'
 let g:netrw_dirhist_6='/Users/beyond'
 let g:netrw_dirhist_7='/Users/beyond/.oh-my-zsh'
+let g:netrw_dirhist_8='/Users/beyond/code/bscloud-code/squid-test'
+let g:netrw_dirhist_9='/Users/beyond'

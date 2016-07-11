@@ -12,7 +12,6 @@ syntax on
 " Vim UI
 "--------
 " color scheme
-set background=dark
 colorscheme solarized
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -37,13 +36,13 @@ set report=0                                                      " always repor
 "set nowrap                                                        " dont wrap lines
 set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
 set number                                                        " show line numbers
+set relativenumber
 set showmatch                                                     " show matching bracket (briefly jump)
 set showcmd                                                       " show typed command in status bar
 set title                                                         " show file in titlebar
 set laststatus=2                                                  " use 2 lines for the status bar
 set matchtime=2                                                   " show matching bracket for 0.2 seconds
 set matchpairs+=<:>                                               " specially for html
-" set relativenumber
 
 " Default Indentation
 set autoindent
@@ -59,7 +58,7 @@ autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 
@@ -96,16 +95,16 @@ let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
 " tabbar
-let g:Tb_MaxSize = 2
-let g:Tb_TabWrap = 1
+" let g:Tb_MaxSize = 2
+" let g:Tb_TabWrap = 1
 
-hi Tb_Normal guifg=white ctermfg=white
-hi Tb_Changed guifg=green ctermfg=green
-hi Tb_VisibleNormal ctermbg=252 ctermfg=235
-hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
+" hi Tb_Normal guifg=white ctermfg=white
+" hi Tb_Changed guifg=green ctermfg=green
+" hi Tb_VisibleNormal ctermbg=252 ctermfg=235
+" hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
 
 " easy-motion
-let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_leader_key = '<Leader><Leader>'
 
 " Tagbar
 let g:tagbar_left=1
@@ -156,11 +155,10 @@ let NERDCompactSexyComs=1
 let g:user_emmet_expandabbr_key='<C-j>'
 
 " powerline
-let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#show_buffers=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#show_buffers=1
 set completeopt-=preview
 
 " let g:SuperTabDefultCompletionType='context'
@@ -200,17 +198,12 @@ autocmd BufReadPost *
       \ endif
 
 " w!! to sudo & write a file
-cmap w!! %!sudo tee >/dev/null %
+cmap w!! w !sudo tee >/dev/null %
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" sublime key bindings
-nmap <D-]> >>
-nmap <D-[> <<
-vmap <D-[> <gv
-vmap <D-]> >gv
 
 " eggcache vim
 " nnoremap ; :
@@ -221,37 +214,22 @@ vmap <D-]> >gv
 :command Qa qa
 :command QA qa
 
-" for macvim
-if has("gui_running")
-    set go=aAce  " remove toolbar
-    "set transparency=30
-    "set guifont=Bitstream\ Vera\ Sans\ Mono\ Roman\ 16
-    set guifont=Monaco:h14
-    set showtabline=2
-    set columns=140
-    set lines=40
-    noremap <D-M-Left> :tabprevious<cr>
-    noremap <D-M-Right> :tabnext<cr>
-    map <D-1> 1gt
-    map <D-2> 2gt
-    map <D-3> 3gt
-    map <D-4> 4gt
-    map <D-5> 5gt
-    map <D-6> 6gt
-    map <D-7> 7gt
-    map <D-8> 8gt
-    map <D-9> 9gt
-    map <D-0> :tablast<CR>
-endif
-
-"gui settings
-"pythoncomplete
-let g:pydiction_location='~/.vim/bundle/Pydiction/complete-dict'
+noremap [b <c-w>h:bn<cr>
+nnoremap ]b <C-h>:bn<CR>
+nnoremap ]d :bd<CR>
+ " 映射<leader>num到num buffer
+map <leader>1 :b 1<CR>
+map <leader>2 :b 2<CR>
+map <leader>3 :b 3<CR>
+map <leader>4 :b 4<CR>
+map <leader>5 :b 5<CR>
+map <leader>6 :b 6<CR>
+map <leader>7 :b 7<CR>
+map <leader>8 :b 8<CR>
+map <leader>9 :b 9<CR>
 
 
-"doxygen自动生成注释
-"SET Comment START
-"autocmd BufNewFile *.php,*.js,*.cpp exec ":call SetComment()" |normal 10Go
+
 
 func SetComment()
     if expand("%:e") == 'php'
@@ -274,26 +252,6 @@ func SetComment()
 endfunc
 
 map <F8> :call SetComment()<CR>:10<CR>o
-"SET Last Modified Time START
-
-func DataInsert()
-    call cursor(9,1)
-    if search ('Last Modified') != 0
-        let line = line('.')
-        call setline(line, '# Last Modified: '.strftime("%Y-%m-%d %H:%M:%S"))
-    endif
-endfunc
-
-autocmd FileWritePre,BufWritePre *.php,*.js,*.cpp ks|call DataInsert() |'s
-"SET Last Modified Time END
-"SET Comment END
-let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
-let g:DoxygenToolkit_paramTag_pre="@Param "
-let g:DoxygenToolkit_returnTag="@Returns   "
-let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
-let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
-let g:DoxygenToolkit_authorName="Mathias Lorente"
-let g:DoxygenToolkit_licenseTag="My own license" 
 
 "复制到系统粘贴板
 vnoremap <C-c> "+y
@@ -308,3 +266,23 @@ let g:table_mode_corner="|"
 
 " youcompleteme
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_python_binary_path = '/usr/local/bin/python'
+" Override go-to.definition key shortcut to Ctrl-]
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
+nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+
+" dash
+nnoremap <leader>da :Dash<CR>
+
+" vim-go
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+" fix golang syntastic
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+
+" black hole register
+nnoremap <leader>b "_

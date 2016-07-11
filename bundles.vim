@@ -58,7 +58,7 @@ Bundle 'dhruvasagar/vim-table-mode'
 
 "------- Go ----------
 Bundle 'fatih/vim-go'
-
+Bundle 'rizzatti/dash.vim'
 
 "--------------
 " Color Schemes
@@ -66,11 +66,9 @@ Bundle 'fatih/vim-go'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'fatih/molokai'
 
+Bundle 'Chiel92/vim-autoformat'
 
 Bundle 'beyondkmp/vim-ansible-yaml'
 Bundle 'saltstack/salt-vim'
-
-"--------python-------
-Bundle 'Chiel92/vim-autoformat'
 
 filetype plugin indent on     " required!

@@ -36,7 +36,7 @@ set report=0                                                      " always repor
 "set nowrap                                                        " dont wrap lines
 set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
 set number                                                        " show line numbers
-set relativenumber
+"set relativenumber
 set showmatch                                                     " show matching bracket (briefly jump)
 set showcmd                                                       " show typed command in status bar
 set title                                                         " show file in titlebar
@@ -283,6 +283,8 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
+
 
 " black hole register
 nnoremap <leader>b "_

@@ -49,13 +49,8 @@ Bundle "terryma/vim-multiple-cursors"
 " Syntax/Indent for language enhancement
 "----------------------------------------
 
-"Bundle 'tpope/vim-markdown'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'dhruvasagar/vim-table-mode'
-" Bundle 'timcharper/textile.vim'
-
-"------- Ruby --------
-" Bundle 'tpope/vim-endwise'
 
 "------- Go ----------
 Bundle 'fatih/vim-go'
@@ -65,7 +60,6 @@ Bundle 'rizzatti/dash.vim'
 " Color Schemes
 "--------------
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'fatih/molokai'
 
 Bundle 'Chiel92/vim-autoformat'
 

@@ -13,8 +13,8 @@ will be good for you.
 
 Such as completions for variable names and function names(neocomplcache), expanding snippets(snipMate), auto closing brackets/brace/quote(delimitMate) and fast expand expressions to HTML(ZenCoding).
 
-* [neocomplcache](http://github.com/Shougo/neocomplcache) - Ultimate auto completion system for Vim.
-* [snipMate](https://github.com/garbas/vim-snipmate) - Plugin for using TextMate-style snippets in Vim.
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) - a code-completion engine for Vim
+* [ultisnips](https://github.com/SirVer/ultisnips) - UltiSnips is the ultimate solution for snippets in Vim.
 * [supertab](http://github.com/ervandew/supertab) - Perform all your vim insert mode completions with Tab.
 * [ZenCoding](http://github.com/mattn/zencoding-vim) - High speed HTML and CSS coding.
 * [delimitMate](http://github.com/Raimondi/delimitMate) - Provides auto-balancing and some expansions for parens, quotes, etc.

@@ -11,10 +11,10 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
-"Bundle 'Shougo/neocomplete'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'ervandew/supertab'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 
 "-----------------
 " Fast navigation
@@ -54,7 +54,6 @@ Bundle 'dhruvasagar/vim-table-mode'
 
 "------- Go ----------
 Bundle 'fatih/vim-go'
-Bundle 'rizzatti/dash.vim'
 
 "--------------
 " Color Schemes
@@ -64,6 +63,5 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Chiel92/vim-autoformat'
 
 Bundle 'beyondkmp/vim-ansible-yaml'
-Bundle 'saltstack/salt-vim'
 
 filetype plugin indent on     " required!

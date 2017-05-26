@@ -1,4 +1,4 @@
-Maple's Vim config
+beyondkmp's Vim config
 ==================
 
 I use `vundle` to manage my plugins, which makes my `.vim` directory clean and tidy. If you are new to vim, the following two posts
@@ -16,29 +16,24 @@ Such as completions for variable names and function names(neocomplcache), expand
 * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) - a code-completion engine for Vim
 * [ultisnips](https://github.com/SirVer/ultisnips) - UltiSnips is the ultimate solution for snippets in Vim.
 * [supertab](http://github.com/ervandew/supertab) - Perform all your vim insert mode completions with Tab.
-* [ZenCoding](http://github.com/mattn/zencoding-vim) - High speed HTML and CSS coding.
-* [delimitMate](http://github.com/Raimondi/delimitMate) - Provides auto-balancing and some expansions for parens, quotes, etc.
 
 ### Shortcuts
 
 * `Tab` -> Rotate across the completion list
 * `Tab` -> Expand snippets or jump to the next placeholder of snippet
-* `Ctrl` + `j` -> Call zen-coding expansion on html tags
 
 ### Dependencies
 
 Compile Vim with `--enable-pythoninterp` and `--enable-rubyinterp` to enable powerful syntax completion supplied by neocomplcache.
 
 ``` bash
-brew install macvim --override-system-vim  # OS X
-yaourt -S gvim                             # ArchLinux
-sudo apt-get install vim-gtk               # Ubuntu
+pacman -S vim    # ArchLinux
 ```
 
 ### Tutorial
 
 ``` vim
-:help zencoding
+:help YouCompleteMe
 ```
 
 [Movie teaching zencoding.vim](http://mattn.github.com/zencoding-vim/)

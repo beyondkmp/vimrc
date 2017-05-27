@@ -43,6 +43,7 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'cespare/vim-sbd'
 Bundle "tpope/vim-repeat"
 Bundle "terryma/vim-multiple-cursors"
+Bundle "myusuf3/numbers.vim"
 
 
 "----------------------------------------

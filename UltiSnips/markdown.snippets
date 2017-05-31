@@ -1,0 +1,19 @@
+# ~/.vim/UltiSnips/markdown.snippets
+
+snippet head "Jekyll post header" b
+---
+layout: post
+title: ${1:title}
+keywords: ["", ""]
+description: ""
+category: ""
+---
+{% include JB/setup %}
+${0}
+endsnippet
+
+snippet image "Jekyll image" b
+
+![${1:title}]({{IMAGE_PATH}}/${2:image_path}/${3:image_name})
+${0}
+endsnippet

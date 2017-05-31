@@ -35,5 +35,7 @@ You can create your own snippets in UltiSnips folder. There are two files , pyth
 ## Reference
 
 1. [Maple's vim config files](https://github.com/humiaozuzu/dot-vimrc)
+2. [Ultisnips and completion #2032](https://github.com/Valloric/YouCompleteMe/issues/2032)
+3. [Vim with YouCompleteMe and Markdown](https://stackoverflow.com/questions/24720587/vim-with-youcompleteme-and-markdown)
 
 

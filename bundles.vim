@@ -62,7 +62,6 @@ Bundle 'fatih/vim-go'
 Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'Chiel92/vim-autoformat'
-
 Bundle 'beyondkmp/vim-ansible-yaml'
 
 filetype plugin indent on     " required!

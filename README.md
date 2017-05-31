@@ -26,9 +26,6 @@ Such as completions for variable names and function names(neocomplcache), expand
 
 Compile Vim with `--enable-pythoninterp` and `--enable-rubyinterp` to enable powerful syntax completion supplied by neocomplcache.
 
-``` bash
-pacman -S vim    # ArchLinux
-```
 
 ### Tutorial
 
@@ -36,12 +33,11 @@ pacman -S vim    # ArchLinux
 :help YouCompleteMe
 ```
 
-[Movie teaching zencoding.vim](http://mattn.github.com/zencoding-vim/)
-
 ### Screenshots
 
 ![Completions](https://raw.github.com/humiaozuzu/dot-vimrc/master/screenshots/completions.gif)
-![Snippets](https://raw.github.com/humiaozuzu/dot-vimrc/master/screenshots/snippets.gif)
+![ultisnips](screenshots/ultisnips.gif)
+
 
 #### Sometimes we need to jump to previous positions to copy/paste or do some fixes:
 ## Fast navigation

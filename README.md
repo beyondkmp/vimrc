@@ -29,3 +29,11 @@ Such as completions for variable names and function names(neocomplcache), expand
 ### snippets
 
 You can create your own snippets in UltiSnips folder. There are two files , python and markdown. markdown.snippets is useful when I write blog with jekyll. I write `head` and then tap `tab`, autocompleting the title header.
+
+
+
+## Reference
+
+1. [dot-vimrc](https://github.com/humiaozuzu/dot-vimrc)
+
+

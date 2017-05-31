@@ -35,7 +35,7 @@ Compile Vim with `--enable-pythoninterp` and `--enable-rubyinterp` to enable pow
 
 ### Screenshots
 
-![Completions](https://raw.github.com/humiaozuzu/dot-vimrc/master/screenshots/completions.gif)
+![Completions](screenshots/ycm.gif)
 ![ultisnips](screenshots/ultisnips.gif)
 
 

@@ -34,6 +34,6 @@ You can create your own snippets in UltiSnips folder. There are two files , pyth
 
 ## Reference
 
-1. [dot-vimrc](https://github.com/humiaozuzu/dot-vimrc)
+1. [Maple's vim config files](https://github.com/humiaozuzu/dot-vimrc)
 
 

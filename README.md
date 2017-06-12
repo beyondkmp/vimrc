@@ -30,7 +30,25 @@ Such as completions for variable names and function names(neocomplcache), expand
 
 You can create your own snippets in UltiSnips folder. There are two files , python and markdown. markdown.snippets is useful when I write blog with jekyll. I write `head` and then tap `tab`, autocompleting the title header.
 
+## Installation
 
+1. Backup your old vim configuration files:
+
+        mv ~/.vim ~/.vim.orig
+        mv ~/.vimrc ~/.vimrc.orig
+
+2. Clone and install this repo:
+
+        git clone https://github.com/beyondkmp/vimrc.git ~/.vim
+        ln -s ~/.vim/vimrc ~/.vimrc
+
+3. Setup `Vundle`:
+
+        git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+4. Install bundles. Launch vim(ignore the errors and they will disappear after installing needed plugins)and run:
+
+        :BundleInstall
 
 ## Reference
 

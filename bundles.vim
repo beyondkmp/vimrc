@@ -53,7 +53,6 @@ Bundle "myusuf3/numbers.vim"
 
 Bundle 'plasticboy/vim-markdown'
 Bundle 'dhruvasagar/vim-table-mode'
-Bundle 'nathanaelkane/vim-indent-guides'
 
 
 "------- Go ----------

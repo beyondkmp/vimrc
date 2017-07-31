@@ -228,7 +228,7 @@ let g:table_mode_corner="|"
 " Override go-to.definition key shortcut to Ctrl-]
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -263,3 +263,6 @@ if executable('ag')
 endif
 noremap <leader>a :Ag! "<cword>"<cr>
 nnoremap <leader>h :GundoToggle<CR>
+
+" for rust
+let g:rustfmt_autosave = 1

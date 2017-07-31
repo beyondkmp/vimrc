@@ -15,6 +15,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
+Bundle 'rdnetto/YCM-Generator'
 
 "-----------------
 " Fast navigation
@@ -52,9 +53,14 @@ Bundle "myusuf3/numbers.vim"
 
 Bundle 'plasticboy/vim-markdown'
 Bundle 'dhruvasagar/vim-table-mode'
+Bundle 'nathanaelkane/vim-indent-guides'
+
 
 "------- Go ----------
 Bundle 'fatih/vim-go'
+
+"------- Rust ----------
+Bundle 'rust-lang/rust.vim'
 
 "--------------
 " Color Schemes

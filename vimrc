@@ -266,3 +266,8 @@ nnoremap <leader>h :GundoToggle<CR>
 
 " for rust
 let g:rustfmt_autosave = 1
+
+" for scala
+let g:syntastic_mode_map = { "mode": "active",
+                           \ "active_filetypes": [],
+                           \ "passive_filetypes": ["scala"] }

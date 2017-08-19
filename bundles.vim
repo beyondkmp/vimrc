@@ -61,6 +61,8 @@ Bundle 'fatih/vim-go'
 "------- Rust ----------
 Bundle 'rust-lang/rust.vim'
 
+"------- Rust ----------
+
 "--------------
 " Color Schemes
 "--------------

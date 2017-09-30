@@ -1,0 +1,20 @@
+# ~/.vim/UltiSnips/python.snippets
+
+snippet JsonUnmarshal "json Unmarshal" !b
+type App struct {
+	Id string `json:"id"`
+	Title string `json:"title"`
+}
+data := []byte(`
+    {
+        "id": "k34rAT4",
+        "title": "My Awesome App"
+    }
+`)
+var app App
+err := json.Unmarshal(data, &app)
+endsnippet
+
+snippet JsonMarshal "json Marshal" !b
+${1:data}, err := json.Marshal(${2:struct})
+endsnippet

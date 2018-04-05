@@ -267,24 +267,3 @@ nnoremap <Leader>a :Ack!<Space>
 " for rust
 let g:rustfmt_autosave = 1
 
-" for schmeme
-let g:niji_dark_colours = [
-    \ [ '81', '#5fd7ff'],
-    \ [ '99', '#875fff'],
-    \ [ '1',  '#dc322f'],
-    \ [ '76', '#5fd700'],
-    \ [ '3',  '#b58900'],
-    \ [ '2',  '#859900'],
-    \ [ '6',  '#2aa198'],
-    \ [ '4',  '#268bd2'],
-    \ ]
-autocmd filetype lisp,scheme,art setlocal equalprg=~/.vim/scmindent.rkt
-let g:tslime_ensure_trailing_newlines = 1
-let g:tslime_normal_mapping = '<leader>t'
-let g:tslime_visual_mapping = '<leader>t'
-let g:tslime_vars_mapping = '<leader>T'
-
-" for scala
-let g:syntastic_mode_map = { "mode": "active",
-                           \ "active_filetypes": [],
-                           \ "passive_filetypes": ["scala"] }

@@ -61,14 +61,18 @@ Bundle 'fatih/vim-go'
 "------- Rust ----------
 Bundle 'rust-lang/rust.vim'
 
-"------- Rust ----------
+"------- scheme ----------
+Bundle "losingkeys/vim-niji"
+Bundle "jgdavey/tslime.vim"
 
 "--------------
 " Color Schemes
 "--------------
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'ybian/smartim'
 
 Bundle 'Chiel92/vim-autoformat'
 Bundle 'beyondkmp/vim-ansible-yaml'
+Bundle 'w0rp/ale'
 
 filetype plugin indent on     " required!

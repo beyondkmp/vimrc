@@ -32,6 +32,7 @@ Bundle 'sjl/gundo.vim'
 "--------------
 " IDE features
 "--------------
+Bundle 'w0rp/ale'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
@@ -57,21 +58,19 @@ Bundle 'dhruvasagar/vim-table-mode'
 "------- Go ----------
 Bundle 'fatih/vim-go'
 
-"------- Rust ----------
-Bundle 'rust-lang/rust.vim'
-
-"------- scheme ----------
-Bundle "losingkeys/vim-niji"
-Bundle "jgdavey/tslime.vim"
+"------- Go ----------
+Bundle 'mattn/emmet-vim'
 
 "--------------
 " Color Schemes
 "--------------
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ybian/smartim'
+Bundle 'morhetz/gruvbox'
+Bundle 'joshdick/onedark.vim'
 
-Bundle 'Chiel92/vim-autoformat'
+Bundle 'ybian/smartim'
+Bundle 'sheerun/vim-polyglot'
+
 Bundle 'beyondkmp/vim-ansible-yaml'
-Bundle 'w0rp/ale'
+
 
 filetype plugin indent on     " required!

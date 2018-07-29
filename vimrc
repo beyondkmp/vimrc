@@ -13,8 +13,14 @@ syntax on
 " Vim UI
 "--------
 " color scheme
-colorscheme solarized
-set background=dark
+" colorscheme solarized
+" colorscheme gruvbox
+colorscheme onedark
+let g:onedark_termcolors=256
+"colorscheme dracula
+"set background=dark
+"let g:gruvbox_termcolors=16
+"colorscheme solarized8
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
@@ -62,9 +68,6 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4  colorcolu
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 
-" syntax support
-autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
-" js
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
@@ -94,9 +97,6 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
-
-" autoformat
-let g:formatter_yapf_style = 'pep8'
 
 " Tagbar
 let g:tagbar_left=1
@@ -161,7 +161,7 @@ nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
-nmap <F7> :Autoformat<cr>
+nmap <F7> :ALEFix<cr>
 nnoremap <leader>v V`]
 
 "------------------
@@ -194,19 +194,27 @@ cmap w!! w !sudo tee >/dev/null %
 :command Qa qa
 :command QA qa
 
-noremap [b <c-w>h:bn<cr>
-nnoremap ]b <C-h>:bn<CR>
-nnoremap ]d :bd<CR>
- " 映射<leader>num到num buffer
-map <leader>1 :b 1<CR>
-map <leader>2 :b 2<CR>
-map <leader>3 :b 3<CR>
-map <leader>4 :b 4<CR>
-map <leader>5 :b 5<CR>
-map <leader>6 :b 6<CR>
-map <leader>7 :b 7<CR>
-map <leader>8 :b 8<CR>
-map <leader>9 :b 9<CR>
+nnoremap <Leader>d :Sbd<CR>
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>g :e#<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+
+let c = 1
+while c <= 99
+  execute "nnoremap " . c . "gb :" . c . "b\<CR>"
+  let c += 1
+endwhile
 
 
 
@@ -245,25 +253,36 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " vim-go
 au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-" fix golang syntastic
-let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
 let g:go_fmt_command = "goimports"
-
-" syntastic
-let g:syntastic_python_pylint_post_args="--max-line-length=79"
 
 " Ack
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
-" if executable('ag')
-  " let g:ackprg = 'ag --vimgrep'
-" endif
-" noremap <leader>a :Ag! "<cword>"<cr>
-" nnoremap <leader>h :GundoToggle<CR>
 
-" for rust
-let g:rustfmt_autosave = 1
+" Check Python files with flake8 and pylint.
+" let b:ale_linters = ['pylint', 'flake8']
+" Fix Python files with autopep8 and yapf.
+" let b:ale_fixers = ['yapf', 'autopep8']
+" Disable warnings about trailing whitespace for Python files.
+let g:ale_linters = {
+\   'python': ['pylint'],
+\   'json': ['fixjson'],
+\   'cpp': ['cppcheck','clang'],
+\   'go': ['go vet'],
+\}
 
+let g:ale_fixers = {
+\   'python': ['yapf'],
+\   'json': ['fixjson'],
+\   'cpp': ['clang-format'],
+\}
+
+let g:ale_fix_on_save = 1
+
+let g:airline#extensions#ale#enabled = 1
+let b:ale_warn_about_trailing_whitespace = 0
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:airline#extensions#ale#enabled = 1

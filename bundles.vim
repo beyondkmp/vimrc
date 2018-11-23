@@ -61,6 +61,8 @@ Bundle 'fatih/vim-go'
 "------- Go ----------
 Bundle 'mattn/emmet-vim'
 
+Plugin 'derekwyatt/vim-scala'
+
 "--------------
 " Color Schemes
 "--------------
@@ -70,7 +72,7 @@ Bundle 'joshdick/onedark.vim'
 Bundle 'ybian/smartim'
 Bundle 'sheerun/vim-polyglot'
 
-Bundle 'beyondkmp/vim-ansible-yaml'
+Bundle 'pearofducks/ansible-vim'
 
 
 filetype plugin indent on     " required!

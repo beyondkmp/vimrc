@@ -15,7 +15,6 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
-Bundle 'rdnetto/YCM-Generator'
 
 "-----------------
 " Fast navigation
@@ -56,14 +55,6 @@ Bundle 'dhruvasagar/vim-table-mode'
 
 "------- Go ----------
 Bundle 'fatih/vim-go'
-
-"------- Go ----------
-Bundle 'mattn/emmet-vim'
-
-Plugin 'derekwyatt/vim-scala'
-Plugin 'rust-lang/rust.vim'
-Plugin 'keith/swift.vim'
-
 
 "--------------
 " Color Schemes

@@ -35,8 +35,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'w0rp/ale'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
+Bundle 'junegunn/fzf.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'vim-airline/vim-airline'
@@ -62,6 +61,9 @@ Bundle 'fatih/vim-go'
 Bundle 'mattn/emmet-vim'
 
 Plugin 'derekwyatt/vim-scala'
+Plugin 'rust-lang/rust.vim'
+Plugin 'keith/swift.vim'
+
 
 "--------------
 " Color Schemes

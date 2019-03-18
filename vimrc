@@ -2,6 +2,11 @@ source ~/.vim/bundles.vim
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
+scriptencoding utf-8
+set termencoding=utf-8
+set encoding=utf-8
+set ambiwidth=double
+
 let mapleader=";"
 " enable filetype dectection and ft specific plugin/indent
 filetype plugin indent on
@@ -160,8 +165,8 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 set completeopt-=preview
 
 " ctrlp
-set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+" set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
+" let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 " Keybindings for plugin toggle
 nnoremap <F2> :set invpaste paste?<CR>
@@ -203,7 +208,7 @@ cmap w!! w !sudo tee >/dev/null %
 :command Qa qa
 :command QA qa
 
-nnoremap <silent> <leader>d :Sbd<CR>
+nnoremap <silent> <leader>d :Sbd<cr><cr>
 nnoremap <silent> <leader>dm :Sbdm<CR>
 
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -254,6 +259,18 @@ let g:ycm_complete_in_strings=1
 let g:ycm_key_invoke_completion = '<c-z>'
 set completeopt=menu,menuone
 
+" let g:ycm_filetype_whitelist = {
+            " \ "c":1,
+            " \ "cpp":1,
+            " \ "objc":1,
+            " \ "go":1,
+            " \ "py":1,
+            " \ "java":1,
+            " \ "sh":1,
+            " \ "zsh":1,
+            " \ "zimbu":1,
+            " \ }
+
 let g:ycm_semantic_triggers =  {
 			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
 			\ 'cs,lua,javascript': ['re!\w{2}'],
@@ -269,9 +286,25 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 au FileType go nmap <leader>r <Plug>(go-run)
 let g:go_fmt_command = "goimports"
 
-" Ack
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
+" fzf ripgrep
+nnoremap <leader>f :Files<cr>
+nnoremap <Leader>a :Rg<Cr>
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+
 
 " Check Python files with flake8 and pylint.
 " let b:ale_linters = ['pylint', 'flake8']
@@ -301,3 +334,15 @@ let g:ale_set_highlights = 0
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:airline#extensions#ale#enabled = 1
+
+" rust
+let g:rustfmt_autosave = 1
+
+" hugo last modify time
+function! s:UpdateTimestamps()
+  let tstamp = strftime('%FT%T%z')
+  %s#lastmod: \zs.*\ze#\=tstamp#g
+  "%s#^lastmod: \(.*\)$#lastmod: \1=tstamp#g
+  echo 'New time: ' . tstamp
+endfunction
+command! UpdateTimestamps call s:UpdateTimestamps()

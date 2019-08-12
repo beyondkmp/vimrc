@@ -171,7 +171,7 @@ set completeopt-=preview
 " Keybindings for plugin toggle
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
-nmap <F5> :TagbarToggle<cr>
+"nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
@@ -283,6 +283,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 
 " vim-go
+nnoremap <silent> <leader>gd :GoDebugStart<cr><cr>
 au FileType go nmap <leader>r <Plug>(go-run)
 let g:go_fmt_command = "goimports"
 

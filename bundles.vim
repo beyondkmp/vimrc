@@ -66,6 +66,9 @@ Bundle 'ybian/smartim'
 Bundle 'sheerun/vim-polyglot'
 
 Bundle 'pearofducks/ansible-vim'
+Bundle 'tpope/vim-obsession'
 
+"--------rust--------
+Bundle "rust-lang/rust.vim"
 
 filetype plugin indent on     " required!

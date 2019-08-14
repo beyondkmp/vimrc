@@ -348,3 +348,6 @@ function! s:UpdateTimestamps()
   echo 'New time: ' . tstamp
 endfunction
 command! UpdateTimestamps call s:UpdateTimestamps()
+
+" close buffer smart
+noremap <leader>x :bp<cr>:bd #<cr>

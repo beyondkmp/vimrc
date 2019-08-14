@@ -1,5 +1,5 @@
-source ~/.vim/bundles.vim
-" encoding dectection
+ source ~/.vim/plugs.vim
+
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 scriptencoding utf-8
@@ -290,6 +290,7 @@ let g:go_fmt_command = "goimports"
 " fzf ripgrep
 nnoremap <leader>f :Files<cr>
 nnoremap <Leader>a :Rg<Cr>
+nnoremap <Leader>s :execute "Rg" expand("<cword>")<CR>
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],

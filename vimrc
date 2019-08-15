@@ -287,6 +287,14 @@ nnoremap <silent> <leader>gd :GoDebugStart<cr><cr>
 au FileType go nmap <leader>r <Plug>(go-run)
 let g:go_fmt_command = "goimports"
 
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_function_parameters = 1
+
 " fzf ripgrep
 nnoremap <leader>f :Files<cr>
 nnoremap <Leader>a :Rg<Cr>

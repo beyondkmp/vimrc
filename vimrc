@@ -171,8 +171,8 @@ set completeopt-=preview
 " Keybindings for plugin toggle
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
-"nmap <F5> :TagbarToggle<cr>
-nmap <F6> :NERDTreeToggle<cr>
+nmap <F5> :TagbarToggle<cr>
+nmap <F6> :NERDTreeToggle %<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
 nmap <F7> :ALEFix<cr>
@@ -276,6 +276,7 @@ let g:ycm_semantic_triggers =  {
 			\ 'cs,lua,javascript': ['re!\w{2}'],
 			\ }
 
+
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -286,6 +287,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 nnoremap <silent> <leader>gd :GoDebugStart<cr><cr>
 au FileType go nmap <leader>r <Plug>(go-run)
 let g:go_fmt_command = "goimports"
+let g:go_def_mode = 'gopls'
+let g:go_info_mode='gopls'
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -355,7 +358,9 @@ function! s:UpdateTimestamps()
   "%s#^lastmod: \(.*\)$#lastmod: \1=tstamp#g
   echo 'New time: ' . tstamp
 endfunction
+
 command! UpdateTimestamps call s:UpdateTimestamps()
 
 " close buffer smart
 noremap <leader>x :bp<cr>:bd #<cr>
+

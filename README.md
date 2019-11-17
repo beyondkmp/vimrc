@@ -1,7 +1,7 @@
 beyondkmp's Vim config
 ==================
 
-I use `vundle` to manage my plugins, which makes my `.vim` directory clean and tidy. If you are new to vim, the following two posts
+I use `vim-plug` to manage my plugins, which makes my `.vim` directory clean and tidy. If you are new to vim, the following two posts
 
 * [Vim Introduction and Tutorial](http://blog.interlinked.org/tutorials/vim_tutorial.html)
 * [Vim plugins I use](http://mirnazim.org/writings/vim-plugins-i-use/)
@@ -42,13 +42,9 @@ You can create your own snippets in UltiSnips folder. There are two files , pyth
         git clone https://github.com/beyondkmp/vimrc.git ~/.vim
         ln -s ~/.vim/vimrc ~/.vimrc
 
-3. Setup `Vundle`:
+3. Setup `vim-plug`:
 
-        git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-
-4. Install bundles. Launch vim(ignore the errors and they will disappear after installing needed plugins)and run:
-
-        :BundleInstall
+        :PlugInstall
 
 ## Reference
 

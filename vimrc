@@ -328,7 +328,7 @@ let g:ale_linters = {
 \   'python': ['pylint'],
 \   'json': ['fixjson'],
 \   'cpp': ['cppcheck','clang'],
-\   'go': ['go vet'],
+\   'go': ['go vet', 'golint', 'go build'],
 \}
 
 let g:ale_fixers = {
@@ -336,6 +336,7 @@ let g:ale_fixers = {
 \   'json': ['fixjson'],
 \   'cpp': ['clang-format'],
 \   'scala': ['scalafmt'],
+\   'sql': ['sqlformat'],
 \}
 
 let g:ale_fix_on_save = 1
@@ -364,3 +365,5 @@ command! UpdateTimestamps call s:UpdateTimestamps()
 " close buffer smart
 noremap <leader>x :bp<cr>:bd #<cr>
 
+" html
+let g:user_emmet_leader_key=','

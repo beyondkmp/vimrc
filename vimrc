@@ -169,10 +169,25 @@ set completeopt-=preview
 " let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 " Keybindings for plugin toggle
+"
+"
+function! NERDTreeToggleInCurDir()
+   " If NERDTree is open in the current buffer
+    if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+        exe ":NERDTreeClose"
+    else
+        if (expand("%:t") != '')
+            exe ":NERDTreeFind"
+        else
+            exe ":NERDTreeToggle"
+        endif
+   endif
+endfunction
+
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 nmap <F5> :TagbarToggle<cr>
-nmap <F6> :NERDTreeToggle %<cr>
+nmap <F6> :call NERDTreeToggleInCurDir()<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
 nmap <F7> :ALEFix<cr>
@@ -327,7 +342,8 @@ let g:fzf_colors =
 let g:ale_linters = {
 \   'python': ['pylint'],
 \   'json': ['fixjson'],
-\   'cpp': ['cppcheck','clang'],
+\   'c': ['gcc', 'cppcheck'],
+\   'cpp': ['g++', 'cppcheck'],
 \   'go': ['go vet', 'golint', 'go build'],
 \}
 

@@ -32,6 +32,14 @@ You can create your own snippets in UltiSnips folder. There are two files , pyth
 
 ## Installation
 
+1. install dependencies
+
+    ```
+    apt-get install cmake
+    apt-get install gcc
+    apt-get install python-dev
+    ```
+
 1. Backup your old vim configuration files:
 
         mv ~/.vim ~/.vim.orig

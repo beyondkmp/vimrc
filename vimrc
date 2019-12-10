@@ -345,6 +345,8 @@ let g:ale_linters = {
 \   'c': ['gcc', 'cppcheck'],
 \   'cpp': ['g++', 'cppcheck'],
 \   'go': ['go vet', 'golint', 'go build'],
+\   'javascript': ['eslint'],
+\   'typescript': ['tsserver', 'tslint'],
 \}
 
 let g:ale_fixers = {
@@ -353,6 +355,8 @@ let g:ale_fixers = {
 \   'cpp': ['clang-format'],
 \   'scala': ['scalafmt'],
 \   'sql': ['sqlformat'],
+\   'typescript': ['prettier'],
+\   'javascript': ['prettier'],
 \}
 
 let g:ale_fix_on_save = 1

@@ -62,4 +62,14 @@ Plug 'tpope/vim-obsession'
 "--------rust--------
 Plug 'rust-lang/rust.vim'
 
+"--------html-----------
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'groenewege/vim-less'
+
+
+"--------typescript--------
+Plug 'leafgarland/typescript-vim'
+
 call plug#end()
